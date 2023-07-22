@@ -99,10 +99,11 @@ SUBDIR=	host-mkdep compat binstall date \
 .if ${TOOLS_BUILDRUMP} == "no"
 SUBDIR+= cap_mkdb crunchgen ctags gencat hexdump \
 		${LINT_BITS} \
-		makewhatis mtree nbperf .WAIT uudecode
+		makewhatis nbperf .WAIT uudecode
 .endif
 
-SUBDIR+= cat rpcgen join lorder m4 mkdep tsort .WAIT yacc .WAIT awk .WAIT lex
+SUBDIR+= mtree cat rpcgen join lorder m4 mkdep tsort .WAIT yacc .WAIT awk .WAIT lex
+SUBDIR+= .WAIT asn1_compile compile_et
 .if ${TOOLS_BUILDRUMP} == "no"
 SUBDIR+= xz-include .WAIT grep xz-lib pax .WAIT libprop
 
@@ -110,7 +111,7 @@ SUBDIR += .WAIT texinfo \
 	.WAIT tic \
 	.WAIT ${TOOLCHAIN_BITS} \
 	${DTRACE_BITS} \
-		asn1_compile cksum compile_et db \
+		cksum db \
 		file lint1 slc \
 		makefs sortinfo \
 		.WAIT menuc mkcsmapper mkesdb mklocale mknod msgc \

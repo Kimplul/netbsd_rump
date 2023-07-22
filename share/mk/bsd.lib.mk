@@ -602,7 +602,7 @@ LIBDPLIBS+=     stdc++	${.CURDIR}/../../../../../external/gpl3/${EXTERNAL_GCC_SU
 LIBCC:=	${CC}
 .endif
 
-_LDADD.${_LIB}=	${LDADD} ${LDADD.${_LIB}}
+_LDADD.${_LIB}=	${LDADD} ${TARGET_LDADD} ${LDADD.${_LIB}}
 _LDFLAGS.${_LIB}=	${LDFLAGS} ${LDFLAGS.${_LIB}}
 
 _MAINLIBDEPS=	${SOLIB} ${DPADD} ${DPLIBC} \
