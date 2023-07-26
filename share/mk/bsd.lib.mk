@@ -126,7 +126,10 @@ print-shlib-teeny:
 	@false
 .endif
 
+SHLIBINSTALL?= yes
+
 .if ${LIBISPRIVATE} == "no"
+.if ${SHLIBINSTALL} != "no"
 .if defined(SHLIB_MAJOR) && !empty(SHLIB_MAJOR)				# {
 .if defined(SHLIB_MINOR) && !empty(SHLIB_MINOR)
 .if defined(SHLIB_TEENY) && !empty(SHLIB_TEENY)
@@ -138,6 +141,7 @@ SHLIB_FULLVERSION=${SHLIB_MAJOR}.${SHLIB_MINOR}
 SHLIB_FULLVERSION=${SHLIB_MAJOR}
 .endif
 .endif									# }
+.endif
 .endif
 
 # add additional suffixes not exported.
